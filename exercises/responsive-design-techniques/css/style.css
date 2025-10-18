@@ -3,9 +3,9 @@ html {
 }
 
 body { 
-  width: 800px;
   max-width: 800px;
   margin: auto;
+  width: min(800px, 90%);
 }
 
 @media (min-width: 640px) {
@@ -24,9 +24,9 @@ body {
 }
 
 #fixed-size-grid-items ul {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, 170px);
-  gap: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
   padding-left: 0;
   list-style: none;
   font-size: 0.8rem;
@@ -36,7 +36,6 @@ body {
   width: 170px;
   margin: 10px;
 }
-
 
 #stretchable-grid-items ul {
   display: flex;
