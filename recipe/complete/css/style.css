@@ -1,0 +1,292 @@
+
+html {
+	font-family: "Lexend", sans-serif;
+    margin: auto;
+}
+
+body { 
+	max-width: 1100px;
+	margin: auto;
+	width: min(1100px, 90%);
+	background: #e6d7ca;
+	color: #511313;
+	font-size: 18px;
+	font-weight: 300;
+	letter-spacing: 0.25px;
+	line-height: 1.5;
+}
+
+::selection {
+	background: #511313;
+	color: #faeed8;
+}
+
+a {
+	color: #bc4f4f;
+	text-decoration: none;
+}
+
+h1 {
+	font-weight: bold;
+	line-height: 1.3;
+	margin: 40px 0 0px;
+	padding: 0;
+	font-size: 1.8em;
+}
+
+header {
+	padding-bottom: 10px;
+}
+
+header p {
+    margin-bottom: 10px;
+    margin-top: 10px;
+
+}
+
+img {
+	max-width: 100%;
+    height: auto;
+}
+
+.preview {
+    float: left;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    margin-left: 0;
+    margin-right: 2rem;
+}
+
+#stretchable-grid-items ul {
+	display: grid;
+	grid-template-columns: 1fr; 
+	grid-template-rows: repeat(4, 1fr);
+	list-style: none;
+	padding-left: 80px;
+	padding-right: 40px;
+	margin-top: 0rem;
+	margin-bottom: 1rem;
+	margin-right: -20px;
+	margin-left: -10px;
+	font-size: 18px;
+}
+
+#stretchable-grid-items li {
+  width: 100%;
+}
+
+#stretchable-grid-items aside {
+  margin: 3px 6px 6px 16px;
+  padding: 8px;
+}
+
+@media (min-width: 480px) {
+  #stretchable-grid-items li {
+    width: 100%;
+  }
+}
+
+@media (min-width: 480px) {
+  #stretchable-grid-items ul {
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, auto);
+  }
+}
+
+@media (min-width: 640px) {
+  #stretchable-grid-items li {
+    width: 100%;
+  }
+}
+
+hr {
+    display: block;
+    margin-block-start: 0.5em;
+    margin-block-end: 0.5em;
+    margin-inline-start: auto;
+    margin-inline-end: auto;
+    color: gray;
+    unicode-bidi: isolate;
+    overflow: hidden;
+    border-style: inset;
+    border-width: 1px;
+    border: none;
+    height: 1px; 
+    margin-bottom: 25px;
+}
+
+hr.dotted {
+    border-top: 5px dotted #511313;
+}
+
+.site-footer {
+	text-align: center;
+}
+
+@media (max-width: 1199px) {
+  #stretchable-grid-items ul {
+		padding-left: 40px;
+	}
+}
+
+.checkable-list {
+	list-style: none;
+	padding: 0;
+}
+
+.checkable-list li {
+	display: flex;
+	align-items: center;
+	margin-bottom: 10px;
+}
+
+.checkable-list input[type="checkbox"] {
+	opacity: 0;
+	position: absolute;
+}
+
+.checkable-list label {
+	position: relative;
+	padding-left: 40px; 
+}
+
+.checkable-list label::before {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 2px;
+	width: 18px;
+	height: 18px;
+	border: 2px solid #c29d84;
+	border-radius: 3px;
+	background-color: #fff;
+	cursor: pointer;
+}
+
+.checkable-list input[type="checkbox"]:checked + label::before {
+  background-color: #511313;
+  border-color: #511313;
+}
+
+.checkable-list input[type="checkbox"]:checked + label::after {
+  content: '\2713'; 
+  position: absolute;
+  left: 4px;
+  top: 0px;
+  color: #9f785d;
+  font-size: 16px;
+}
+
+.checkable-list input[type="checkbox"]:checked + label {
+  color: #9f785d;
+}
+
+.partone {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.ingredients {
+    flex: 1;
+    height: auto;
+    max-height: none;
+    overflow: visible;
+    padding: 30px;
+	padding-top: 0px;
+    margin-top: 0px;
+    margin-bottom: 15px;
+	font-size: 15px;
+	min-width: 220px;
+	max-width: 400px;
+}
+
+.imagetwo {
+    flex: 1;
+    height: auto;
+    max-height: none;
+    overflow: visible;
+	padding-top: 0px;
+    margin-top: 0px;
+    margin-bottom: 15px;
+	width: 100%;
+  	object-fit: contain; 
+	min-width: 300px;
+	justify-content: center;
+}
+
+.parttwo {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.notes {
+    flex: 1;
+    height: auto;
+    max-height: none;
+    overflow: visible;
+    padding: 30px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+	min-width: 400px;
+	max-width: 600px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+
+@media (max-width: 400px) {
+  .notes {
+		min-width: 300px;
+	}
+}
+
+.final {
+	max-height: 400px;
+	padding-left: 60px;
+}
+
+@media (max-width: 1000px) {
+  .final {
+		padding-left: 0px;
+	}
+}
+
+@media (max-width: 885px) {
+  .final {
+		padding-left: auto;
+	}
+}
+
+.imagethree {
+    flex: 1;
+    height: auto;
+    max-height: none;
+    overflow: visible;
+    margin-top: 10px;
+    margin-bottom: 15px;
+	margin-left: 10px;
+	width: 100%;
+  	object-fit: contain; 
+	min-width: 300px;
+	justify-content: center;
+	
+}
+
+h3 {
+	font-size: 20px;
+}
+
+aside {
+	font-size: 15px;
+}
+
+footer {
+    text-align: center;
+    margin-top: 50px;
+    padding-top: 20px;
+    border-top: 2px solid #c29d84;
+    color: #511313;
+	padding-bottom: 20px;
+	font-size: 15px;
+}
