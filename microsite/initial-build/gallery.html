@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Shohei Ohtani - Gallery</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bakbak+One&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Kumbh+Sans:wght@100..900&family=League+Spartan:wght@100..900&family=Sigmar&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="containergallery">
+        <div class="title-bar">
+            <div class="hamburger">
+                <img src="./assets/burger.png" alt="Menu">
+                <input type="checkbox" id="nav-toggle" title="Pages">
+                <div class="nav">
+                    <a href="index.html">Home</a>
+                    <a href="earlydays.html">Early Days</a>
+                    <a href="career.html">Professional Career</a>
+                    <a href="achievements.html">Achievements</a>
+                    <a href="gallery.html">Media Gallery<input type="radio" name="nav" id="media" title="Media Gallery" checked=""></a>
+                </div>
+            </div>
+            <p><a href="index.html"><img src="./assets/logo.png" alt="Menu"></a></p>
+            </div>
+        </div>
+    <div id="galleryslides" class="galltab" style="display: block;">
+        <h3>Media Gallery</h3>
+            <div class="slideshow-container">
+
+                <div class="fade" style="display: block;">
+                    <div class="numbertext">1 / 4
+                    </div>
+                        <img src="assets/trophy.png" style="width: 100%">
+                        <div class="container3">
+                            <div class="box3">
+                                <p>Shohei Ohtani celebrates with the trophy after the Dodgers win against the New York Yankees in the baseball World Series (AP Photo/Ashley Landis)</p>
+                            </div>
+                        </div>
+                </div>
+
+                <div class="fade" style="display: none;">
+                    <div class="numbertext">2 / 4
+                    </div>
+                        <img src="assets/helmet.png" style="width:100%">
+                        <div class="container3">
+                            <div class="box3">
+                                <p>Los Angeles Angels’ Shohei Ohtani celebrates wearing a Kabuto samurai warrior helmet after his home run against the Detroit Tigers during the fourth inning in the second baseball game of a doubleheader (AP Photo/Paul Sancya, File)</p>
+                            </div>
+                        </div>
+                </div>
+
+                <div class="fade" style="width: 100%; display: none;">
+                    <div class="numbertext">3 / 4
+                    </div>
+                        <img src="assets/angels.png" style="width:100%">
+                        <div class="container3">
+                            <div class="box3">
+                                <p>Ohtani pitching for the LA Angels at Angel Stadium on Opening Day (Ronald Martinez/Getty Images)</p>
+                            </div>
+                        </div>
+                </div>
+                            
+                <div class="fade" style="display: none;">
+                    <div class="numbertext">4 / 4
+                    </div>
+                        <img src="assets/fighters.png" style="width:100%">
+                        <div class="container3">
+                            <div class="box3">
+                                <p>Ohtani pitching for the Nippon Ham Fighters against the Fukuoka Softbank Hawks (Kyodo News via AP)</p>
+                            </div>
+                        </div>
+                </div>      
+            
+                <a class="prev" onclick="plusSlides(-1, 'galleryslides')">❮</a>
+                <a class="next" onclick="plusSlides(1, 'galleryslides')">❯</a>
+            </div>
+            <br>
+  
+            <div style="text-align:center">
+                <span class="dot active" onclick="currentSlide(1, 'galleryslides')"></span> 
+                <span class="dot" onclick="currentSlide(2, 'galleryslides')"></span> 
+                <span class="dot" onclick="currentSlide(3, 'galleryslides')"></span> 
+                <span class="dot" onclick="currentSlide(4, 'galleryslides')"></span>
+                    </div>
+    </div>
+
+    <script>
+
+        let slideIndex = 1;
+
+        function openPage(pageName, elmnt, color, slideSet) {
+            // Hide all elements with class="tabcontent" by default */
+            console.log(pageName);
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+              tabcontent[i].style.display = "none";
+            }
+          
+            // Remove the background color of all tablinks/buttons
+            tablinks = document.getElementsByClassName("tablink");
+            for (i = 0; i < tablinks.length; i++) {
+              tablinks[i].style.backgroundColor = "";
+            }
+          
+            // Show the specific tab content
+            document.getElementsByClassName(pageName)[0].style.display = "block";
+            
+          
+            // Add the specific color to the button used to open the tab content
+            elmnt.style.backgroundColor = color;
+
+            if(slideSet){
+                showSlides(slideIndex, slideSet);
+            }
+
+          
+        }
+          
+          // Get the element with id="defaultOpen" and click on it
+        document.getElementById("defaultOpen").click();
+        
+       
+        
+            
+        function plusSlides(n, slideSet) {
+            showSlides(slideIndex += n, slideSet);
+        }
+            
+        function currentSlide(n, slideSet) {
+            showSlides(slideIndex = n, slideSet);
+        }
+        
+        function showSlides(n, slideSet) {
+            console.log(slideSet);
+            let i;
+            let thisSlideSet = slideSet; 
+            let slides = document.getElementById(thisSlideSet).getElementsByClassName('fade');
+            let dots = document.getElementById(thisSlideSet).getElementsByClassName("dot");
+            if (n > slides.length) {slideIndex = 1}    
+            if (n < 1) {slideIndex = slides.length}
+            for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";  
+            }
+            for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex-1].style.display = "block";  
+            dots[slideIndex-1].className += " active";
+        }
+    </script>
+        
+    <footer>
+        <div class="footer">
+            <p>© 2025 Designed by Elma Ademovic | Creative Directed by Grace Huang</p>
+            <p>Information from <a href="https://en.wikipedia.org/wiki/Shohei_Ohtani" target="_blank">Wikipedia</a> and
+            <a href="https://www.mlb.com/player/shohei-ohtani-660271?stats=career-r-pitching-mlb&year=2025" target="_blank">MLB</a>
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
